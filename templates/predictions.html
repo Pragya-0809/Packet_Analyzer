@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictions</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            /* background-color:rgb(1, 3, 39); */
+        }
+        th {
+            background-color:rgb(1, 3, 39);
+            color:white
+        }
+        .circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+            line-height: 20px;
+            font-size: 14px;
+            margin-right: 5px;
+        }
+        .green {
+            background-color: rgb(0, 248, 0);
+            color: white;
+        }
+        .red {
+            background-color: rgb(255, 38, 38);
+            color: white;
+        }
+        .green2 {
+            color: rgb(0, 248, 0);
+        }
+        .red2 {
+           color: rgb(255, 38, 38);
+        }
+        h1{
+            text-align: center;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 50px;
+            margin-bottom: 70px;
+            margin-top: 70px;
+        }
+        body {
+            /* background-color:rgb(1, 3, 39); */
+            color: white; 
+            background-image: url('/static/Images/bgstar.jpg');
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>IP Address Analysis</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>IP Address</th>
+                <th>Prediction</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ip, prediction in predictions.items %}
+            <tr>
+                <td>{{ ip }}</td>
+                <td>
+                    {% if prediction == 1 %}
+                        <span class="circle red">&#10006;</span><span class="red2">Malicious</span>
+                    {% else %}
+                        <span class="circle green">&#10004;</span> <span class="green2">Not Malicious</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

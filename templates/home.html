@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Packet Analyzer</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CSS link -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Bootstrap CSS link -->
+ <!-- Font Awesome CSS link -->
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'arial', sans-sarif;
+  }
+
+  .navbar {
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Adding a shadow for depth */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it stays on top of other elements */
+    display: flex;
+    justify-content: flex-end ; /* Align items to the right */
+  }
+  .navbar img {
+    height: 30px; /* Adjust the height of the logo */
+    width: auto; /* Ensure the width adjusts proportionally */
+    border: 2px solid black; /* Add border to the logo */
+    margin-right: 550px;
+}
+
+
+  .navbar a {
+    margin-left: 20px; /* Add space between links */
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+  }
+  .navbar a:last-child {
+    margin-right: 50px; /* Add extra space to the last link */
+  }
+
+  .background-image {
+    background-image: url("/static/Images/zeek.png"); /* Replace 'background-image.jpg' with the path to your image */
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh); /* Adjusted to leave space for the navbar */
+    margin-top: 0px; /* Same as the height of the navbar */
+    width: 100%; /* Ensures the image covers the full width */
+    position: relative;
+    top: 0px; /* Same as the height of the navbar */
+    left: 0;
+    color: white; /* Set text color */
+    text-align: center; 
+  }
+  .background-image p,
+.background-image h1 {
+    position: absolute; /* Position the text absolutely within the container */
+    top: 50%; /* Position text at 50% from the top */
+    left: 50%; /* Position text at 50% from the left */
+    transform: translate(-50%, -50%); /* Center text vertically and horizontally */
+}
+  .start-button {
+    padding: 15px 30px;
+    background-color: blue;
+    color: white;
+    font-size: 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-decoration:none;
+  }
+
+  .start-button:hover {
+    background-color: green;
+  }
+  .start-text {
+    position: absolute;
+    top: calc(100% + 20px); /* Position it below the button */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: black; /* Change text color to contrast with background */
+    font-size: 18px;
+    z-index: 1001; /* Ensure it's above other elements */
+    
+  }
+  .highlight-text {
+    color: yellow; /* Change the color to your desired color */
+    display: block; /* Move it to the next line */
+    margin-top: 5%;
+}
+
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="#" onclick="return false;">
+  <img src="/static/Images/logo1.png" alt="Logo">
+</a>
+<span class="navbar-links">
+  <!-- Your navigation links with Font Awesome icons -->
+  <a href="/graph1/"><i class="fas fa-chart-area"></i> Visualize</a>
+  <a href="/graph2/"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+  <a href="/about"><i class="fas fa-info-circle"></i> About Us    </a>
+</span>
+</div>
+<div class="background-image">
+    <!-- This div will contain the background image -->
+    <h1>
+      Click on the below button to see <span class="highlight-text">IP address analysis</span></h1>
+  
+  
+</div>
+<a href="/pred" class="btn btn-primary start-button" style="position: absolute; top: 80%; left: 50%; transform: translate(-50%, -50%);">START</a>
+
+<!-- Bootstrap JS scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

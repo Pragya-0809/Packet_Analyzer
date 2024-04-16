@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("/static/Images/Packet ANALYZER.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+
+        .login-button {
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .login-box {
+            width: 400px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            position: absolute;
+            top: 52%;
+            left: 77%;
+            transform: translateX(-50%);
+            display: none;
+            /* transition: opacity 1; Fade effect */
+            /* opacity: 0.5; */
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .login-box button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .login-box button.forgot-password {
+            background-color: transparent;
+            color: #333;
+            text-decoration: underline;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+
+        .login-box button.forgot-password:hover {
+            text-decoration: none;
+            color: #666;
+        }
+
+        .login-box button.create-account {
+            background-color: #007bff;
+            margin-top: 10px;
+        }
+
+        .login-box button.create-account:hover {
+            background-color: #0056b3;
+        }
+        
+    </style>
+</head>
+<body>
+    <button class="login-button" onclick="showLoginBox()">Login</button>
+
+    <div class="login-box" id="loginBox">
+        <input type="text" placeholder="Email Address" required>
+        <input type="password" placeholder="Password" required>
+        <button onclick="login()">Login</button>
+        <button class="forgot-password" onclick="forgotPassword()">Forgot Password?</button>
+        <button class="create-account" onclick="createAccount()">Create Account</button> 
+    </div>
+
+    <script>
+        function showLoginBox() {
+            var loginBox = document.getElementById("loginBox");
+            loginBox.style.display = "block";
+            
+        }
+
+        function login() {
+            // Add login functionality here
+            // alert("Logged in successfully!");
+            window.location.href = "{% url 'home' %}";
+        }
+        function forgotPassword() {
+            // Add forgot password functionality here
+            // alert("Forgot Password?");
+            window.location.href = "reset_password.html";
+        }
+
+        function createAccount() {
+            // Add create account functionality here
+            window.location.href = "{% url 'create_accont' %}";
+        }
+    </script>
+</body>
+</html>

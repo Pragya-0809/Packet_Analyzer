@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style> 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'arial', sans-serif;
+        } 
+        .navbar {
+            background-color: white;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Adding a shadow for depth */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensures it stays on top of other elements */
+            display: flex;
+            justify-content: flex-end ; /* Align items to the right */
+          }
+          .navbar img {
+            height: 30px; /* Adjust the height of the logo */
+            width: auto; /* Ensure the width adjusts proportionally */
+            border: 2px solid black; /* Add border to the logo */
+            margin-right: 950px;
+        }
+        
+        .navbar img {
+            height: 30px; /* Adjust the height of the logo */
+            width: auto; /* Ensure the width adjusts proportionally */
+            border: 2px solid black; /* Add border to the logo */
+            margin-right: 550px; /* Adjusted margin for the logo */
+        }
+        
+          .navbar a {
+            margin-left: 20px; /* Add space between links */
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+          }
+          .navbar a:last-child {
+            margin-right: 50px; /* Add extra space to the last link */
+          }
+          .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/home">
+        <img src="/static/Images/logo1.png" alt="Logo"></a>
+        <!-- Your navigation links with Font Awesome icons -->
+        <a href="/graph1/"><i class="fas fa-chart-area"></i> Visualize</a>
+        <a href="/graph2/"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="/about"><i class="fas fa-info-circle"></i> About Us    </a>
+    </div>
+    <div class="content">
+        <img src="/static/Images/about.jpg" alt="Description of the image" width="1532" height="400">
+        <div>
+            <h1>About Us</h1>
+            <p>This is Packet Analyzer.It is developed by group CS-47. It is used to analyse packets for any malicious content
+            </p>
+        </div>
+    </div>  
+</body>
+</html>
